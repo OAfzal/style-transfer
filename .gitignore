@@ -1,1 +1,10 @@
 backend/env/
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+frontend/node_modules
+bower_components
