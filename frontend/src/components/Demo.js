@@ -26,7 +26,7 @@ function Demo(){
       'Accept': 'application/json'
      };
 
-    fetch('http://127.0.0.1:5000/predict', options)
+    fetch('/api', options)
       .then(res => res.json())
       .then(resj => setImage(resj.url))
   }
