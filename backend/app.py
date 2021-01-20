@@ -115,4 +115,4 @@ account = "dcstore1"
 key="W/K4v+3w79iFfD9dx/a8DqUNsTkrjaEhJyr9creDToR/XsvySVumhy4WHYVvoC2DjKlU71WW+HKN+fRkYAh2rw=="
 container = "images"
 blob_service = BlockBlobService(account_name=account, account_key=key)
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0', port=80)
