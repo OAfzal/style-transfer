@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'w3-css/w3.css';
+import Header from './components/Header.js';
+import Description from './components/Description.js';
+import Demo from './components/Demo.js';
+import Footer from './components/Footer.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(){
+
+  return(
+    <div className="w3-padding-large">
+      <Header  />
+      <Description style="height:300px;" />
+      <Demo/>
     </div>
-  );
-}
+  )
 
+}
 export default App;
