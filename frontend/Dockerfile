@@ -5,21 +5,19 @@ FROM node:10 as build-stage
 WORKDIR /react-app
 
 # required to install packages
-COPY package*.json ./
+COPY frontend/package*.json ./
 
 # installing npm packages
 RUN npm install
 
 # copying over react source material
-COPY src ./src
-
-COPY frontend/ .
+COPY frontend/src ./src
 
 # copying over further react material
-COPY public ./public
+COPY frontend/public ./public
 
 # copying over our nginx config file
-COPY container_server.conf ./
+COPY frontend/container_server.conf ./
 
 # creating production build to serve through nginx
 RUN npm run build
