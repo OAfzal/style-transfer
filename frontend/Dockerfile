@@ -10,8 +10,12 @@ COPY package*.json ./
 # installing npm packages
 RUN npm install
 
+<<<<<<< HEAD
 # copying over react source material
 COPY src ./src
+=======
+COPY frontend/ .
+>>>>>>> 3a6130ff178f81feffc9e6cb6ba18b4f0426888e
 
 # copying over further react material
 COPY public ./public
