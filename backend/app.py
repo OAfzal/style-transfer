@@ -70,8 +70,8 @@ def predict():
         image = Image.open(io.BytesIO(image)).convert('RGB')
         Randomfilename = evaluate(image)
 
-        # blob_service.create_blob_from_path(container, Randomfilename, Randomfilename)
-        # ref =  'https://'+ account + '.blob.core.windows.net/' + container + '/' + Randomfilename
+        blob_service.create_blob_from_path(container, Randomfilename, Randomfilename)
+        ref =  'https://'+ account + '.blob.core.windows.net/' + container + '/' + Randomfilename
         return send_file(Randomfilename,mimetype='image/gif')
         # return jsonify({'url':ref})
 
@@ -87,9 +87,9 @@ def ready():
 
 
 loadModel()
-# account = "dcluster"
-# key="HP0jQjf8+w8mGK3L9hhjshZajfrx1tMx3zysBF3dWke8mDaQ5jnH2qxQYeqkEEzuZr6UWentCEOtLT+XrX9r1w=="
-# container = "images"
-# blob_service = BlockBlobService(account_name=account, account_key=key)
+account = "dcluster"
+key="HP0jQjf8+w8mGK3L9hhjshZajfrx1tMx3zysBF3dWke8mDaQ5jnH2qxQYeqkEEzuZr6UWentCEOtLT+XrX9r1w=="
+container = "images"
+blob_service = BlockBlobService(account_name=account, account_key=key)
 CORS(app,expose_headers='Authorization')
 # app.run(host='0.0.0.0', port=5000)
