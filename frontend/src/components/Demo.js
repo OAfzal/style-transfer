@@ -31,7 +31,7 @@ function Demo(){
     //   .then(res => res.json())
     //   .then(resj => setImage(resj.url))
 
-    fetch('http://10.68.12.16:8000/predict', options)
+    fetch('/predict', options)
       .then(res => res.blob())
       .then(resj => setImage(URL.createObjectURL(resj)))
 
