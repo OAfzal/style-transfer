@@ -31,15 +31,11 @@ def tensor_save_rgbimage(tensor, filename, cuda=False):
     img = img.transpose(1, 2, 0).astype('uint8')
     img = Image.fromarray(img)
     img.save(filename)
-    return img
-
-
 
 def tensor_save_bgrimage(tensor, filename, cuda=False):
     (b, g, r) = torch.chunk(tensor, 3)
     tensor = torch.cat((r, g, b))
-    img = tensor_save_rgbimage(tensor, filename, cuda)
-    return img
+    tensor_save_rgbimage(tensor, filename, cuda)
 
 
 def gram_matrix(y):

@@ -16,6 +16,7 @@ function Demo(){
     console.log(data)
     const formData = new FormData();
     formData.append('file', data.image[0]);
+    
 
     console.log(formData) 
 
@@ -26,9 +27,14 @@ function Demo(){
       'Accept': 'application/json'
      };
 
-    fetch('/api', options)
-      .then(res => res.json())
-      .then(resj => setImage(resj.url))
+    // fetch('http://localhost:8000/predict', options)
+    //   .then(res => res.json())
+    //   .then(resj => setImage(resj.url))
+
+    fetch('http://10.68.14.10:8000/predict', options)
+      .then(res => res.blob())
+      .then(resj => setImage(URL.createObjectURL(resj)))
+
   }
 
   console.log(Image)
